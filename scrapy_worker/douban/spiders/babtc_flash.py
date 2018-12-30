@@ -10,10 +10,10 @@ from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Request, Rule
 
 
-class Toscrapepider(CrawlSpider):
-    name = 'to_scrape'
-    allowed_domains = ['quotes.toscrape.com']
-    start_urls = ['http://quotes.toscrape.com/']
+class BaBtcSpider(CrawlSpider):
+    name = 'babtc_flash'
+    allowed_domains = ['www.8btc.com']
+    start_urls = ['https://www.8btc.com/flash']
     # rules = (
     #     Rule(LinkExtractor(allow=('book/subject/(\d).*rec$')),
     #          callback='parse_item', follow=False, process_request='cookie'),
@@ -41,13 +41,12 @@ class Toscrapepider(CrawlSpider):
         :param response:
         :return:
         '''
-        text = response.xpath("/html/body/div/div[2]/div[1]/div[4]/span[1]/text()").extract()
+
+        #text = response.xpath("//span[@class='text_show_title']/text()").extract()
+
+        text = response.xpath("//div[@class='flash-item__content']/text()").extract()
         print(text)
 
-        # $x('//span[@class="text"]/text()')  --在 chrome的console输入，测试xpath
-        # 开发者工具，选择consolo栏，在consolo中输入$x('你的表达式')，回车就会返回能匹配输入表达式的元素。
-        text = response.xpath('//span[@class="text"]/text()').extract()
-        print(text)
 
     #
     # def parse_item(self, response):
