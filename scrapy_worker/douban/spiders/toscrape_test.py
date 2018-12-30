@@ -44,6 +44,9 @@ class Toscrapepider(CrawlSpider):
         text = response.xpath("/html/body/div/div[2]/div[1]/div[4]/span[1]/text()").extract()
         print(text)
 
+        text = response.xpath('//span[@class="text"]/text()').extract()
+        print(text)
+
     #
     # def parse_item(self, response):
     #     subject = Subject()
