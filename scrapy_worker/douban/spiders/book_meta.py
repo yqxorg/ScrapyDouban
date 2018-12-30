@@ -5,9 +5,9 @@
 import random
 import string
 
-import douban.database as db
-from douban.items import BookMeta
-import douban.util as util
+import scrapy_worker.douban.database as db
+from scrapy_worker.douban.items import BookMeta
+import scrapy_worker.douban.util as util
 
 from scrapy import Request, Spider
 

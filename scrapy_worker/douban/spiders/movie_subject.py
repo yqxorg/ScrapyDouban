@@ -4,7 +4,7 @@
 import random
 import string
 
-from douban.items import Subject
+from scrapy_worker.douban.items import Subject
 
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Request, Rule

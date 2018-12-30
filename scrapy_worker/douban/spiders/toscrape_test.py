@@ -4,20 +4,20 @@
 import random
 import string
 
-from douban.items import Subject
+from scrapy_worker.douban.items import Subject
 
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Request, Rule
 
 
-class BookSubjectSpider(CrawlSpider):
-    name = 'book_subject'
-    allowed_domains = ['m.douban.com']
-    start_urls = ['https://m.douban.com/book/subject/26628811/']
-    rules = (
-        Rule(LinkExtractor(allow=('book/subject/(\d).*rec$')),
-             callback='parse_item', follow=True, process_request='cookie'),
-    )
+class Toscrapepider(CrawlSpider):
+    name = 'to_scrape'
+    allowed_domains = ['quotes.toscrape.com']
+    start_urls = ['http://quotes.toscrape.com/']
+    # rules = (
+    #     Rule(LinkExtractor(allow=('book/subject/(\d).*rec$')),
+    #          callback='parse_item', follow=True, process_request='cookie'),
+    # )
 
     def cookie(self, request):
         bid = ''.join(random.choice(string.ascii_letters + string.digits) for

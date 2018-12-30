@@ -5,8 +5,8 @@ import json
 import random
 import string
 
-import douban.database as db
-from douban.items import Comment
+import scrapy_worker.douban.database as db
+from scrapy_worker.douban.items import Comment
 
 from scrapy import Request, Spider
 

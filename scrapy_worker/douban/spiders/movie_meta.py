@@ -4,12 +4,12 @@
 
 import string
 import random
-import douban.util as util
-import douban.database as db
-import douban.validator as validator
+import scrapy_worker.douban.util as util
+import scrapy_worker.douban.database as db
+import scrapy_worker.douban.validator as validator
 
 from scrapy import Request, Spider
-from douban.items import MovieMeta
+from scrapy_worker.douban.items import MovieMeta
 
 
 cursor = db.connection.cursor()

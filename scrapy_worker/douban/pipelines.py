@@ -3,9 +3,9 @@
 
 import hashlib
 
-import douban.database as db
+import scrapy_worker.douban.database as db
 
-from douban.items import Comment, BookMeta, MovieMeta, Subject
+from scrapy_worker.douban.items import Comment, BookMeta, MovieMeta, Subject
 
 from scrapy import Request
 from scrapy.pipelines.images import ImagesPipeline
